@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.done {
+.todo-item span.done {
   text-decoration: line-through;
 }
 

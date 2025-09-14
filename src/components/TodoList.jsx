@@ -32,9 +32,12 @@ const TodoList = () => {
         <p>Add the things you need to do today...</p>
       ) : (
         state.map((todo) => (
-          <div key={todo.id} >
-            <span className={`todo-item ${todo.done ? "done" : ""}`} 
-                onClick={() => toggleDone(todo.id)}>{todo.text}
+          <div key={todo.id} className="todo-item">
+            <span
+              className={todo.done ? "done" : ""}
+              onClick={() => toggleDone(todo.id)}
+            >
+              {todo.text}
             </span>
             <button onClick={() => deleteTodo(todo.id)}>X</button>
           </div>
