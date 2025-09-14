@@ -1,13 +1,43 @@
-.todo-item{
-    width: 200px;
-    border: 1px solid black;
-    padding: 5px;
+.todo-item {
+  width: 200px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.done{
-    text-decoration: line-through;
+.done {
+  text-decoration: line-through;
 }
 
-.todo-group{
-    justify-self: center;
+.todo-group {
+  justify-self: center;
+  text-align: center;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+input {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
