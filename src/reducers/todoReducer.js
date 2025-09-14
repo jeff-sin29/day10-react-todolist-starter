@@ -18,7 +18,7 @@ export const todoReducer = (state, action) => {
     case 'DELETE':
       return state.filter(todo => todo.id !== action.id);
     case 'ADD':
-      const nextId = state.length > 0 ? Math.max(...state.map((todo) => todo.id)) + 1 : 1;
+      const nextId = state.reduce((maxId, todo) => Math.max(maxId, todo.id), 0) + 1;
       const newTodo = { id: nextId, text: action.text, done: false };
       return [...state, newTodo];
     default:

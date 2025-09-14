@@ -19,9 +19,9 @@ const TodoList = () => {
 
     function addTodo() {
         if (newTodo.trim()) {
-        const action = { type: "ADD", text: newTodo };
-        dispatch(action);
-        setNewTodo("");
+            const action = { type: "ADD", text: newTodo };
+            dispatch(action);
+            setNewTodo("");
         }
     }
 
