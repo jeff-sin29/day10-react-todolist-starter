@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Button, Modal, Input } from "antd";
+import { Modal, Input } from "antd";
 
 const TaskEditModal = ({ visible, onClose, onSave, task }) => {
   const [taskName, setTaskName] = useState(task.text);
 
   const handleSave = () => {
-    onSave(task.id, taskName); // Pass the updated task name to the parent
-    onClose(); // Close the modal
+    onSave(task.id, taskName); 
+    onClose(); 
   };
 
   return (

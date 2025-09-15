@@ -3,7 +3,7 @@ import { AppstoreOutlined, HomeOutlined, SettingOutlined } from '@ant-design/ico
 import { Menu, Layout } from 'antd';
 import { NavLink, Outlet} from 'react-router-dom';
 
-const { Header, Content, Footer } = Layout;
+const { Header, Content } = Layout;
 
 export function DefaultLayout() {
     const items = [

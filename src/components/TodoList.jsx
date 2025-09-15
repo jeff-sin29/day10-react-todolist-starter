@@ -16,19 +16,6 @@ const TodoList = () => {
         dispatch(action);
     }
 
-    // function deleteTodo(id) {
-    //     const action = { type: "DELETE", id: id };
-    //     dispatch(action);
-    // }
-
-    // function addTodo() {
-    //     if (newTodo.trim()) {
-    //         const action = { type: "ADD", text: newTodo };
-    //         dispatch(action);
-    //         setNewTodo("");
-    //     }
-    // }
-
     useEffect(() => {
         getTodos().then(response => {
             dispatch({type: 'LOAD_TODOS', todos: response.data})
