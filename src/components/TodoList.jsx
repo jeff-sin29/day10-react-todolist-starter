@@ -50,7 +50,7 @@ const TodoList = () => {
         state.map((todo) => (
           <div key={todo.id} className="todo-item">
             <span
-              className={todo.done ? "done" : ""}
+              className={`todo-text ${todo.done ? "done" : ""}`}
               onClick={() => toggleDone(todo)}
             >
               {typeof todo.text === 'object' ? todo.text.text : todo.text}

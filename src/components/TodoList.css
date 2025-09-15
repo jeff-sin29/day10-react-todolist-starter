@@ -1,43 +1,49 @@
+.todo-group {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .todo-item {
-  width: 200px;
-  border: 1px solid black;
-  padding: 5px;
-  margin: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px 0;
+    gap: 10px;
+}
+
+.todo-item span {
+    flex: 1; /* Takes up all available space */
+    cursor: pointer;
 }
 
 .todo-item span.done {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
-.todo-group {
-  justify-self: center;
-  text-align: center;
+.todo-item div {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 5px;
 }
 
-.todo-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 5px 0;
+.todo-item button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    cursor: pointer;
+    border-radius: 3px;
 }
 
-input {
-  margin-right: 10px;
-  padding: 5px;
+.todo-item button:hover {
+    background: #e9e9e9;
 }
 
-button {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border: 1px solid black;
+.todo-item button:last-child {
+    background: #007bff;
 }
 
-button:hover {
-  background-color: #0056b3;
+.todo-item button:last-child:hover {
+    background: #0056b3;
 }
