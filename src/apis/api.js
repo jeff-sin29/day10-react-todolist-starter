@@ -23,3 +23,8 @@ export const putTodo = async (id, done) =>{
     const response = await instance.put(`/todos/${id}`, {done});
     return response;
 }
+
+export const changeTaskName = async (id, text) =>{
+    const response = await instance.put(`/todos/${id}`, {text});
+    return response;
+}

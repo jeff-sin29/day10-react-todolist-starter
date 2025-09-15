@@ -25,6 +25,13 @@ export const todoReducer = (state, action) => {
       // return [...state, newTodo];
     case 'LOAD_TODOS':
       return action.todos
+    case 'EDIT':
+      return state.map(todo => {
+        if (todo.id === action.id) {
+          return { ...todo, text: action.text }; 
+        }
+        return todo; 
+      });
     default:
       return state;
   }
