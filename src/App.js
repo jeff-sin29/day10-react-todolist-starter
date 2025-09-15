@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useParams } from "react";
 import './App.css';
 import TodoList from "./components/TodoList";
 import { initialState, todoReducer } from "./reducers/todoReducer";
@@ -30,6 +30,12 @@ function ErrorPage() {
   return <h1>Error Page</h1>
 }
 
+function TodoDetail() {
+  const {key} = useParams()
+  console.log(key)
+  return <h1>This is : {key} Detail</h1>;
+}
+
 const routes = [
   {
     path: '/',
@@ -37,13 +43,16 @@ const routes = [
     errorElement: <ErrorPage/>,
     children: [{
       path: '',
-      element: <h1>Home Pge</h1>
+      element: <h1>Home Page</h1>
     },{
       path: 'about',
       element: <h1>About Us</h1>
     },{
       path: 'todos',
       element: <TodoList/>
+    },{
+      path: 'todos/:key',
+      element: <TodoDetail/>
     }]
   }
 ]

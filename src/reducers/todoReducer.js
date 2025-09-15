@@ -16,11 +16,15 @@ export const todoReducer = (state, action) => {
         return todo;
       });
     case 'DELETE':
+      // deleteTodo(action.id)
       return state.filter(todo => todo.id !== action.id);
+      // return state.filter(todo => todo.id !== action.id);
     case 'ADD':
-      const nextId = state.reduce((maxId, todo) => Math.max(maxId, todo.id), 0) + 1;
-      const newTodo = { id: nextId, text: action.text, done: false };
-      return [...state, newTodo];
+      // const nextId = state.reduce((maxId, todo) => Math.max(maxId, todo.id), 0) + 1;
+      return [...state, action.todo];
+      // return [...state, newTodo];
+    case 'LOAD_TODOS':
+      return action.todos
     default:
       return state;
   }
