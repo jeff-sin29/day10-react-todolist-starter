@@ -1,7 +1,7 @@
 import {TodoContext} from "../contexts/TodoContext"
 import {useContext, useState, useEffect} from "react";
 import "./TodoList.css";
-import {getTodos, deleteTodo, addTodo, putTodo, changeTaskName} from "../apis/api.js"
+import {getTodos, deleteTodo, addTodo, updateTodo } from "../apis/api.js";
 import TaskEditModal from "./TaskEditModal.jsx";
 
 const TodoList = () => {
@@ -11,7 +11,7 @@ const TodoList = () => {
     const [editingTask, setEditingTask] = useState(null);
 
     async function toggleDone(todo){
-        const response = await putTodo(todo.id, !todo.done);
+        const response = await updateTodo(todo.id, { done: !todo.done });
         const action = {type: 'DONE', id: response.data.id};
         dispatch(action);
     }
@@ -32,12 +32,12 @@ const TodoList = () => {
     }
 
     const handleDelete = async (id) => {
-        const response = await deleteTodo(id);
-        dispatch({ type: "DELETE", id: response.data.id });
+        await deleteTodo(id);
+        dispatch({ type: "DELETE", id });
     }
 
     const handleEdit = async (id, newText) => {
-        const response = await changeTaskName(id, newText);
+        const response = await updateTodo(id, { text: newText });
         dispatch({ type: "EDIT", id: response.data.id, text: response.data.text });
     };
 
